@@ -163,7 +163,7 @@ public class MainController implements Initializable {
 
     public void onSimple(ActionEvent actionEvent) { throws JRException {
         Map parameter = new HashMap();
-        JasperPrint jasperPrint = JasperFillManager.fillReport("report/", parameter, connection);
+        JasperPrint jasperPrint = JasperFillManager.fillReport("report/SimpleReport.jasper", parameter, connection);
         JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
         jasperViewer.setVisible(true);
     }
@@ -171,7 +171,7 @@ public class MainController implements Initializable {
     public void onGroup(ActionEvent actionEvent) {
         throws JRException {
                 Map parameter = new HashMap();
-                JasperPrint jasperPrint = JasperFillManager.fillReport("report/", parameter, connection);
+                JasperPrint jasperPrint = JasperFillManager.fillReport("report/GroupReport.jasper", parameter, connection);
                 JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
                 jasperViewer.setVisible(true);
     }
