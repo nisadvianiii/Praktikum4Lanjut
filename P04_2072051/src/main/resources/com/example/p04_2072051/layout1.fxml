@@ -17,16 +17,39 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.input.KeyCodeCombination?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="623.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.p04_2072051.controllers.MainController">
    <children>
       <MenuBar prefHeight="25.0" prefWidth="600.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="tampil" onAction="#onShow" mnemonicParsing="false" text="Show Supplier Management" />
-                  <MenuItem fx:id="tutup" onAction="#onShow" mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#onShow" text="Show Category Management">
+                <accelerator>
+                    <KeyCodeCombination alt="DOWN" code="F2" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                </accelerator>
+              </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Close">
+                <accelerator>
+                    <KeyCodeCombination alt="DOWN" code="X" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                </accelerator>
+                  </MenuItem>
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Report">
+               <items>
+                   <MenuItem mnemonicParsing="false" onAction="#onSimple" text="Simple Report">
+                       <accelerator>
+                           <KeyCodeCombination alt="DOWN" code="S" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                       </accelerator>
+                   </MenuItem>
+                   <MenuItem mnemonicParsing="false" onAction="#onGroup" text="Group Report">
+                       <accelerator>
+                           <KeyCodeCombination alt="DOWN" code="G" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                       </accelerator>
+                   </MenuItem>
+               </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
@@ -68,22 +91,22 @@
                   </GridPane>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="btnSave" onAction="#onTambah" mnemonicParsing="false" text="Save">
+                        <Button fx:id="btnSave" mnemonicParsing="false" onAction="#onTambah" text="Save">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btnReset" onAction="#onReset" mnemonicParsing="false" text="Reset">
+                        <Button fx:id="btnReset" mnemonicParsing="false" onAction="#onReset" text="Reset">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btnUpdate" onAction="#onEdit" mnemonicParsing="false" text="Update">
+                        <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#onEdit" text="Update">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="btnDelete" onAction="#onHapus" mnemonicParsing="false" text="Delete">
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#onHapus" text="Delete">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
@@ -97,7 +120,7 @@
             </VBox>
             <VBox prefHeight="376.0" prefWidth="336.0">
                <children>
-                  <TableView fx:id="table1" onMouseClicked="#pilih" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="377.0" prefWidth="343.0">
+                  <TableView fx:id="table1" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" onMouseClicked="#pilih" prefHeight="377.0" prefWidth="343.0">
                     <columns>
                       <TableColumn fx:id="kolom1" prefWidth="59.333372712135315" text="ID" />
                       <TableColumn fx:id="kolom2" prefWidth="103.33330917358398" text="Name" />

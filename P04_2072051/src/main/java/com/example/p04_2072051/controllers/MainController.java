@@ -160,4 +160,19 @@ public class MainController implements Initializable {
                 reset();
             }
         }
+
+    public void onSimple(ActionEvent actionEvent) { throws JRException {
+        Map parameter = new HashMap();
+        JasperPrint jasperPrint = JasperFillManager.fillReport("report/", parameter, connection);
+        JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
+        jasperViewer.setVisible(true);
+    }
+
+    public void onGroup(ActionEvent actionEvent) {
+        throws JRException {
+                Map parameter = new HashMap();
+                JasperPrint jasperPrint = JasperFillManager.fillReport("report/", parameter, connection);
+                JasperViewer jasperViewer = new JasperViewer(jasperPrint, false);
+                jasperViewer.setVisible(true);
+    }
 }
